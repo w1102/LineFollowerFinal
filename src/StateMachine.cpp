@@ -120,7 +120,7 @@ int StateMachine::bitArrayToInt32(bool arr[], int count)    {
 int StateMachine::readSensors()    { //đọc sensor
     bool sensorValue[5] = {0}; // tạo mảng nhị phân chứa giá trị sensor
     for (int i = 0; i < 5; i++) 
-        sensorValue[i] = digitalRead(A0 + i); 
+        sensorValue[i] = digitalRead(A0 + i); // đọc sensor
     return bitArrayToInt32(sensorValue, sizeof(sensorValue)/sizeof(bool)); // trả về giá trị sensor dưới dạng int
     
     
