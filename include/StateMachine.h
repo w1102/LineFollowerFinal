@@ -7,7 +7,7 @@
 #include <WProgram.h>
 #endif
 
-#define debug
+#define debug // in ví trí mới lên serial (dùng tối ưu các góc)
 
 
 class StateMachine
