@@ -26,8 +26,11 @@ bool firstRA = 1; // góc vuông đầu tiên
 unsigned long timeGet;
 
 Servo myservo;
-StateMachine myState(&bias, &prebias);
+
+StateMachine myState(&bias, &prebias); 
+
 PID mySensorPID(&kp, &ki, &kd);
+
 
 
 
@@ -55,7 +58,9 @@ void setup() {
 
 void loop() {
   //đọc trạng thái xe
-  bool rightAngle = myState.getState(); // trả về true cho rightAngle nếu là góc vuông
+  bool rightAngle = myState.getState(); 
+  // trả về true cho rightAngle nếu là góc vuông
+  // vị trí xe đc trả về bias qua con trỏ.
 
   // xử lý góc vuông
   if (firstRA == 1 or ( (unsigned long) (millis() - timeGet) > 8000) )  {
@@ -70,7 +75,7 @@ void loop() {
       delay(100);
     }
 
-    if (rightAngle == 1)  {
+    if (rightAngle == 1)  { // xử lí góc vuông
       RAProcess();
       if (firstRA == 1)
         firstRA = 0;
@@ -83,7 +88,7 @@ void loop() {
     myservo.write(centerDegree+mySensorPID.Calcu(bias));
     int speed = 0;
     
-    switch(abs(bias)) {
+    switch(abs(bias)) { // tốc độ 4 cấp rẽ (trái phải gộp chung)
       case 0:
         speed = 100; // tốc độ đi thẳng
         break;
