@@ -134,7 +134,7 @@ void RAProcess()  { // xử lý góc vuông
     myservo.write(centerDegree+mySensorPID.Calcu(-4)); // tiến trái
     digitalWrite(IN[0], HIGH);
     digitalWrite(IN[1], LOW);
-    analogWrite(motorPin, 180);
+    //analogWrite(motorPin, 180);
     delay(800);
 
 
