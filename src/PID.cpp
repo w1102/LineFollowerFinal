@@ -18,7 +18,7 @@ int PID::Calcu(int input)  {
     D = error - previousError;
     previousError=error;
 
-    if (error >= 0) pidValue = (kp*P) + (ki*I) + (kd*D); // cộng 10 vì góc giữa servo là 80. không cân đối giữa góc phải 110 và trái 10;
+    if (error >= 0) pidValue = (kp*P) + (ki*I) + (kd*D); // cộng 10 vì góc giữa servo là 80. không đối xứng giữa góc phải 110 và trái 10;
     else pidValue = ((kp+10)*P) + (ki*I) + (kd*D);  
 
     return pidValue;
