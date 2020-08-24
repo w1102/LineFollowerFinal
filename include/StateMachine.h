@@ -23,8 +23,8 @@ class StateMachine
         int bias, prebias;
         
         void printBits(byte); // in giá vị trí xe lên serial.
-        int readSensors(); // đọc giá trị sensor và chuyển giá trị  nhị phân
-        int bitArrayToInt32(bool arr[], int count); // bool array to int
+        int readSensors(); // đọc giá trị sensor vào mảng bolean
+        int bitArrayToInt32(bool arr[], int count); // boolean array to int
 
 };
 
